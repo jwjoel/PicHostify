@@ -11,6 +11,8 @@
   <a href="https://github.com/jwjoel/PicHostify/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/jwjoel/PicHostify.svg" alt="License"></a>
 </p>
 
+<img src="https://cdn.staticaly.com/gh/jwjoel/images-hosting@main/1280800.623frevhd1w0.png" alt="1280800" />
+
 PicHostify is a browser extension based on PicX, offering a comprehensive image hosting solution and image toolkit using the GitHub API. It's free, secure, and facilitates image uploading, hosting, link generation, and offers various image manipulation tools.
 
 ---
