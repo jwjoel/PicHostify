@@ -52,16 +52,17 @@ PicHostify will soon be available in the Google Chrome App Store, but you can al
 
 ## :sparkles: Features
 
-- **Drag and Drop, Copy and Paste, File Selection:** Multiple ways to select images.
+- **Drop, Paste, File Selection:** Multiple ways to upload images.
 - **Image Renaming & Hashing:** Ensure unique names and setting naming prefixes.
 - **Batch Operations:** Uploading, deleting, and batch copying of image links.
 - **Multi-level Directory Management:** Create and view images in multi-level directories.
 - **One-click Copying:** Easily copy image links and freely convert between Markdown and HTML formats.
 - **Multiple Image Link Rules:** Built-in support for Staticaly, jsDelivr, ChinaJsDelivr, and more.
 - **Custom Image Link Rules:** Configure to suit your needs.
-- **Image Compression:** Built-in efficient compression algorithm with automatic compression before uploading.
-- **Dark Mode:** A more comfortable viewing experience at night.
+- **Image Compression:** Built-in efficient compression algorithm (webp, mozjpeg, avif) with automatic compression before uploading.
 - **Image Watermarks:** Configure for added image protection.
+- **Base64 Encoder:** Convert image to Base64 format.
+- **Dark Mode:** A more comfortable viewing experience at night.
 ## :heart: Acknowledgement
 
 We would like to express our deepest gratitude to the original project, [PicX](https://github.com/XPoet/picx), and its [author](https://github.com/XPoet). Their work has laid a solid foundation for PicHostify and inspired our efforts. If you're interested in a web version of PicHostify, we highly recommend visiting the original PicX project.
