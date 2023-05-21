@@ -5,7 +5,7 @@
 # PicGo Image Hosting
 
 [![Release](https://img.shields.io/github/release/jwjoel/PicGo.svg)](https://github.com/jwjoel/PicGo/releases)
-[![License](https://img.shields.io/github/license/jwjoel/PicGo.svg)](https://github.com/jwjoel/PicGo/blob/main/docs/LICENSE)
+[![License](https://img.shields.io/github/license/jwjoel/PicGo.svg)](https://github.com/jwjoel/PicGo/blob/main/LICENSE.md)
 
 > PicGo is a **browser extension** derived from PicX, an image hosting tool developed based on GitHub API. It provides services for image uploading, hosting, generating image links, and common image tools.
 
