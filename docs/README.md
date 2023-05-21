@@ -1,77 +1,83 @@
-<a href="https://github.com/jwjoel/PicGo" >
-<img width="100" align="right" alt="PicGo" src="https://cdn.staticaly.com/gh/jwjoel/images-hosting@main/20230521/logo.4hkvjfbcwn80.png">
-</a>
+<p align="center">
+  <a href="https://github.com/jwjoel/PicGo" >
+    <img width="200" alt="PicGo" src="https://cdn.staticaly.com/gh/jwjoel/images-hosting@main/20230521/logo.4hkvjfbcwn80.png">
+  </a>
+</p>
 
-# PicGo Image Hosting
+<h1 align="center"> PicGo Image Hosting </h1>
 
-[![Release](https://img.shields.io/github/release/jwjoel/PicGo.svg)](https://github.com/jwjoel/PicGo/releases)
-[![License](https://img.shields.io/github/license/jwjoel/PicGo.svg)](https://github.com/jwjoel/PicGo/blob/main/LICENSE.md)
+<p align="center">
+  <a href="https://github.com/jwjoel/PicGo/releases"><img src="https://img.shields.io/github/release/jwjoel/PicGo.svg" alt="Release"></a>
+  <a href="https://github.com/jwjoel/PicGo/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/jwjoel/PicGo.svg" alt="License"></a>
+</p>
 
-> PicGo is a **browser extension** derived from PicX, an image hosting tool developed based on GitHub API. It provides services for image uploading, hosting, generating image links, and common image tools.
+PicGo is a browser extension inspired by PicX, offering a comprehensive image hosting solution using the GitHub API. It's free, secure, and facilitates image uploading, hosting, link generation, and offers various image manipulation tools.
 
 ---
 
-## Highlights
+## :star2: Highlights
 
-- **Simple** - No need to download or install. Use it directly in your browser without platform limitations.
-- **Free** - PicGo is built with various open-source technologies and is completely free.
-- **Secure** - Sensitive data like tokens are stored locally on the user's device with no risk of leakage.
+- **Quick:** No deployment necessary. Use it directly in your browser with no limitations.
+- **Free:** PicGo is powered by Vue.js and is entirely free of charge.
+- **Secure:** Sensitive data like API Keys are stored locally using IndexedDB.
 
-## Instruction
+## :book: How to use
 
-Simply create a [GitHub Token](https://github.com/settings/tokens/new) and use it to configure your image hosting extension.
+Start by creating a [GitHub Token](https://github.com/settings/tokens/new) and use it to configure your PicGo. It's that simple!
 
-## Installation
+## :inbox_tray: Installation
 
-Search for [PicGo]() in the Google Chrome App Store (Coming Soon!) or
+PicGo will soon be available in the Google Chrome App Store, but you can also build it from the source code:
 
 1. Clone the repository or download the source code:
 
-   ```
-   git clone https://github.com/jwjoel/picgo.git
-   ```
+    ```
+    git clone https://github.com/jwjoel/picgo.git
+    ```
 
-2. Build the PicGo with `npm install` and `npm run build`
+2. Build PicGo with the commands `npm install` and `npm run build`
 
-3. In your browser, open the Extensions page:
+3. Open the Extensions page in your browser:
 
-   - In Chrome, navigate to `chrome://extensions/`
-   - In Firefox, navigate to `about:addons`
+    - In Chrome, navigate to `chrome://extensions/`
+    - In Firefox, navigate to `about:addons`
 
-4. Enable developer mode (usually a toggle in the top-right corner of the Extensions page).
+4. Enable developer mode (you'll usually find this as a toggle in the top-right corner of the Extensions page).
 
-5. Click "Load unpacked extension" (Chrome) or "Load Temporary Add-on" (Firefox) and select the `dist` directory that in your project dictionary.
+5. Click "Load unpacked extension" (Chrome) or "Load Temporary Add-on" (Firefox) and select the `dist` directory within your project folder.
 
-5. The PicGo extension should now be installed and visible in your browser's toolbar.
+6. PicGo extension should now be installed and ready to use in your browser's toolbar.
 
+## :sparkles: Features
 
-## Features
+- **Drag and Drop, Copy and Paste, File Selection:** Multiple ways to select images.
+- **Image Renaming & Hashing:** Ensure unique names and setting naming prefixes.
+- **Batch Operations:** Uploading, deleting, and batch copying of image links.
+- **Multi-level Directory Management:** Create and view images in multi-level directories.
+- **One-click Copying:** Easily copy image links and freely convert between Markdown and HTML formats.
+- **Multiple Image Link Rules:** Built-in support for Staticaly, jsDelivr, ChinaJsDelivr, and more.
+- **Custom Image Link Rules:** Configure to suit your needs.
+- **Image Compression:** Built-in efficient compression algorithm with automatic compression before uploading.
+- **Dark Mode:** A more comfortable viewing experience at night.
+- **Image Watermarks:** Configure for added image protection.
 
-- Support for selecting images through **drag and drop**, **copy and paste**, and **file selection**
-- Support for **renaming** and **hashing** images (to ensure unique names) and **setting naming prefixes**
-- Support for **batch uploading**, **batch deleting**, and **batch copying image links**
-- Support for **multi-level directory** management in image hosting (creating and viewing images in multi-level directories)
-- Support for **one-click copying** of image links and **free conversion** between Markdown and HTML formats
-- Built-in support for multiple image link rules (Staticaly, jsDelivr, ChinaJsDelivr, etc.)
-- Support for configuring custom image link rules
-- Support for **image compression** (built-in efficient compression algorithm, with options to automatically compress before uploading)
-- Support for **dark mode**
-- Support for configuring **image watermarks**
+## :handshake: Contribution
 
-## Contribution
+We welcome contributions in many forms, including but not limited to, improving the user interface, adding new features, optimizing performance, fixing bugs, and enhancing documentation.
 
-Various forms of contributions are welcome, including but not limited to: improving the user interface, adding new features, optimizing performance, fixing bugs, and enhancing documentation.
+This project is possible thanks to all of its contributors:
 
-This project exists thanks to all the contributors:
+<p align="center">
+  <a href="https://github.com/jwjoel/PicGo/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=jwjoel/PicGo" />
+  </a>
+</p>
 
-<a href="https://github.com/jwjoel/PicGo/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=jwjoel/PicGo" />
-</a>
+## :speech_balloon: Feedback
 
-## Feedback
+Should you encounter any issues during use, please raise an [issue](https://github.com/jwjoel/picgo/issues) for the author to address.
 
-If you encounter any issues during usage, please raise an [issue](https://github.com/XPoet/picgo/issues) to the author.
+## :balance_scale: License
 
-## License
+This project is licensed under [AGPL-3.0](https://github.com/jwjoel/picgo/blob/master/LICENSE).
 
-**[AGPL-3.0](https://github.com/XPoet/picgo/blob/master/LICENSE)** 
