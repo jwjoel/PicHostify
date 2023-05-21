@@ -60,6 +60,9 @@ PicHostify will soon be available in the Google Chrome App Store, but you can al
 - **Image Compression:** Built-in efficient compression algorithm with automatic compression before uploading.
 - **Dark Mode:** A more comfortable viewing experience at night.
 - **Image Watermarks:** Configure for added image protection.
+## :heart: Acknowledgement
+
+We would like to express our deepest gratitude to the original project, [PicX](https://github.com/XPoet/picx), and its [author](https://github.com/XPoet). Their work has laid a solid foundation for PicHostify and inspired our efforts. If you're interested in a web version of PicHostify, we highly recommend visiting the original PicX project.
 
 ## :speech_balloon: Feedback
 
@@ -76,10 +79,6 @@ This project is possible thanks to all of its contributors:
     <img src="https://contrib.rocks/image?repo=jwjoel/PicHostify" />
   </a>
 </p>
-
-## :heart: Acknowledgement
-
-We would like to express our deepest gratitude to the original project, [PicX](https://github.com/XPoet/picx), and its [author](https://github.com/XPoet). Their work has laid a solid foundation for PicHostify and inspired our efforts. If you're interested in a web version of PicHostify, we highly recommend visiting the original PicX project.
 
 ## :balance_scale: License
 
