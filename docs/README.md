@@ -4,14 +4,14 @@
   </a>
 </p>
 
-<h1 align="center"> PicHostify - Versatile Image Hosting Browser Extension</h1>
+<h1 align="center"> PicHostify - Versatile Image Hosting</h1>
 
 <p align="center">
   <a href="https://github.com/jwjoel/PicHostify/releases"><img src="https://img.shields.io/github/release/jwjoel/PicHostify.svg" alt="Release"></a>
   <a href="https://github.com/jwjoel/PicHostify/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/jwjoel/PicHostify.svg" alt="License"></a>
 </p>
 
-PicHostify is a browser extension inspired by PicX, offering a comprehensive image hosting solution using the GitHub API. It's free, secure, and facilitates image uploading, hosting, link generation, and offers various image manipulation tools.
+PicHostify is a browser extension based on PicX, offering a comprehensive image hosting solution and image toolkit using the GitHub API. It's free, secure, and facilitates image uploading, hosting, link generation, and offers various image manipulation tools.
 
 ---
 
