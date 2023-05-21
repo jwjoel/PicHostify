@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/jwjoel/PicHostify" >
-    <img width="200" alt="PicHostify" src="https://cdn.staticaly.com/gh/jwjoel/images-hosting@main/20230521/logo.4hkvjfbcwn80.png">
+    <img src="https://cdn.staticaly.com/gh/jwjoel/images-hosting@main/1280800.623frevhd1w0.png" alt="1280800" />
   </a>
 </p>
 
@@ -10,8 +10,6 @@
   <a href="https://github.com/jwjoel/PicHostify/releases"><img src="https://img.shields.io/github/release/jwjoel/PicHostify.svg" alt="Release"></a>
   <a href="https://github.com/jwjoel/PicHostify/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/jwjoel/PicHostify.svg" alt="License"></a>
 </p>
-
-<img src="https://cdn.staticaly.com/gh/jwjoel/images-hosting@main/1280800.623frevhd1w0.png" alt="1280800" />
 
 PicHostify is a browser extension based on PicX, offering a comprehensive image hosting solution and image toolkit using the GitHub API. It's free, secure, and facilitates image uploading, hosting, link generation, and offers various image manipulation tools.
 
@@ -33,16 +31,16 @@ PicHostify will soon be available in the Google Chrome App Store, but you can al
 
 1. Clone the repository or download the source code:
 
-    ```
-    git clone https://github.com/jwjoel/PicHostify.git
-    ```
+   ```
+   git clone https://github.com/jwjoel/PicHostify.git
+   ```
 
 2. Build PicHostify with the commands `npm install` and `npm run build`
 
 3. Open the Extensions page in your browser:
 
-    - In Chrome, navigate to `chrome://extensions/`
-    - In Firefox, navigate to `about:addons`
+   - In Chrome, navigate to `chrome://extensions/`
+   - In Firefox, navigate to `about:addons`
 
 4. Enable developer mode (you'll usually find this as a toggle in the top-right corner of the Extensions page).
 
@@ -63,6 +61,7 @@ PicHostify will soon be available in the Google Chrome App Store, but you can al
 - **Image Watermarks:** Configure for added image protection.
 - **Base64 Encoder:** Convert image to Base64 format.
 - **Dark Mode:** A more comfortable viewing experience at night.
+
 ## :heart: Acknowledgement
 
 We would like to express our deepest gratitude to the original project, [PicX](https://github.com/XPoet/picx), and its [author](https://github.com/XPoet). Their work has laid a solid foundation for PicHostify and inspired our efforts. If you're interested in a web version of PicHostify, we highly recommend visiting the original PicX project.
@@ -86,4 +85,3 @@ Thanks to all of the contributors:
 ## :balance_scale: License
 
 This project is licensed under [AGPL-3.0](https://github.com/jwjoel/PicHostify/blob/master/LICENSE).
-
