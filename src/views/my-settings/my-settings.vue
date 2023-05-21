@@ -1,29 +1,35 @@
 <template>
   <div class="page-container settings-page-container">
     <el-collapse>
-      <el-collapse-item title="图片名称设置" name="1">
+      <el-collapse-item title="Image Name Settings" name="1">
         <ul class="setting-list" style="margin-top: 10rem">
           <li class="setting-item has-desc">
             <el-switch
               v-model="userSettings.defaultHash"
               @change="persistUserSettings"
-              active-text="自动哈希化"
+              active-text="Auto Hash"
             ></el-switch>
-            <span class="desc">上传前自动给图片名增加哈希码，确保图片名唯一，强烈建议开启</span>
+            <span class="desc"
+              >Automatically add a hash code to the image name before uploading to ensure
+              uniqueness. It is highly recommended to enable this.</span
+            >
           </li>
           <li class="setting-item has-desc">
             <el-switch
               v-model="userSettings.prefixNaming.enable"
               @change="persistUserSettings"
-              active-text="添加前缀命名"
+              active-text="Add Prefix Naming"
             ></el-switch>
-            <span class="desc">上传前自动给图片名增加前缀，例如：abc-image.jpg，abc- 为前缀</span>
+            <span class="desc"
+              >Automatically add a prefix to the image name before uploading, for example:
+              abc-image.jpg, where "abc-" is the prefix.</span
+            >
           </li>
           <li class="setting-item has-desc" v-if="userSettings.prefixNaming.enable">
             <el-input
               class="prefix-input"
               v-model="userSettings.prefixNaming.prefix"
-              placeholder="请输入命名前缀"
+              placeholder="Enter the prefix for naming"
               @input="persistUserSettings"
               clearable
               autofocus
@@ -32,15 +38,17 @@
         </ul>
       </el-collapse-item>
 
-      <el-collapse-item title="图片水印设置" name="2">
+      <el-collapse-item title="Image Watermark Settings" name="2">
         <ul class="setting-list">
           <li class="setting-item has-desc">
             <el-switch
               v-model="userSettings.watermark.enable"
               @change="persistUserSettings"
-              active-text="是否添加水印"
+              active-text="Add Watermark"
             ></el-switch>
-            <span class="desc">开启后可以自定义水印文字、字体大小、位置、颜色和透明度</span>
+            <span class="desc"
+              >Enable to customize watermark text, font size, position, color, and opacity.</span
+            >
           </li>
           <li class="setting-item">
             <el-card class="settings-item-card">
@@ -53,15 +61,18 @@
         </ul>
       </el-collapse-item>
 
-      <el-collapse-item title="图片压缩设置" name="3">
+      <el-collapse-item title="Image Compression Settings" name="3">
         <ul class="setting-list">
           <li class="setting-item has-desc">
             <el-switch
               v-model="userSettings.compress.enable"
               @change="persistUserSettings"
-              active-text="是否压缩图片"
+              active-text="Compress Images"
             ></el-switch>
-            <span class="desc">开启后上传前会自动压缩图片，有效缩短图片加载时间，强烈建议开启</span>
+            <span class="desc"
+              >Enable to automatically compress images before uploading, reducing image loading
+              highly recommended to enable this.</span
+            >
           </li>
           <li class="setting-item">
             <el-card class="settings-item-card">
@@ -75,13 +86,13 @@
         </ul>
       </el-collapse-item>
 
-      <el-collapse-item title="图片链接规则配置" name="4">
+      <el-collapse-item title="Image Link Rule Configuration" name="4">
         <ul class="setting-list">
           <li class="setting-item cdn">
-            选择图片链接规则：
+            Select an image link rule:
             <el-select
               v-model="userSettings.imageLinkType.selected"
-              placeholder="选择一个图片链接类型规则"
+              placeholder="Select an image link rule"
               @change="saveUserSettings"
             >
               <el-option
@@ -102,23 +113,24 @@
         </ul>
       </el-collapse-item>
 
-      <el-collapse-item title="图片链接格式设置" name="5">
+      <el-collapse-item title="Image Link Format Settings" name="5">
         <ul class="setting-list">
           <li class="setting-item has-desc">
             <el-switch
               v-model="userSettings.imageLinkFormat.enable"
               @change="persistUserSettings"
-              active-text="自动转换图片链接格式"
+              active-text="Auto Convert Image Link Format"
             ></el-switch>
             <span class="desc">
-              上传成功后复制的图片链接时使用 {{ userSettings.imageLinkFormat.selected }} 格式
+              When copying the image link after successful upload, it will be in the
+              {{ userSettings.imageLinkFormat.selected }} format.
             </span>
           </li>
           <li class="setting-item">
-            选择图片链接格式：
+            Select an image link format:
             <el-select
               v-model="userSettings.imageLinkFormat.selected"
-              placeholder="选择一个图片链接格式"
+              placeholder="Select an image link format"
               @change="saveUserSettings"
             >
               <el-option
@@ -136,18 +148,18 @@
         </ul>
       </el-collapse-item>
 
-      <el-collapse-item title="主题设置" name="6">
+      <el-collapse-item title="Theme Settings" name="6">
         <ul class="setting-list">
           <li class="setting-item">
-            选择主题模式：
+            Select a theme mode:
             <el-select
               v-model="userSettings.theme.mode"
-              placeholder="主题模式"
+              placeholder="Theme Mode"
               @change="saveUserSettings"
             >
-              <el-option label="跟随系统" :value="ThemeModeEnum.follow"></el-option>
-              <el-option label="白昼主题" :value="ThemeModeEnum.light"></el-option>
-              <el-option label="暗夜主题" :value="ThemeModeEnum.dark"></el-option>
+              <el-option label="Follow System" :value="ThemeModeEnum.follow"></el-option>
+              <el-option label="Light Theme" :value="ThemeModeEnum.light"></el-option>
+              <el-option label="Dark Theme" :value="ThemeModeEnum.dark"></el-option>
             </el-select>
           </li>
         </ul>

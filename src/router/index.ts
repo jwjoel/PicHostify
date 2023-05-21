@@ -9,7 +9,7 @@ import compressTool from '@/components/tools/compress-tool/compress-tool.vue'
 import base64Tool from '@/components/tools/base64-tool/base64-tool.vue'
 import watermarkTool from '@/components/tools/watermark-tool/watermark-tool.vue'
 
-const titleSuffix = ` | PicX 图床`
+const titleSuffix = ` | PicGo`
 
 const routes: Array<RouteRecordRaw> = [
   {

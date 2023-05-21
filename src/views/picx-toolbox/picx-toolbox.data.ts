@@ -4,22 +4,22 @@ import { getUuid } from '@/utils'
 
 export const toolboxList = shallowRef<ToolItemModel[]>([
   {
-    name: '图片压缩',
-    desc: '不限制图片大小和数量，不上传至服务器的离线极致压缩',
+    name: 'Image Compression',
+    desc: 'Ultimate offline compression without limitations on image size and quantity',
     icon: IEpMagicStick,
     uuid: getUuid(),
     path: '/compress'
   },
   {
-    name: '图片转 Base64',
-    desc: '不限制图片大小和数量，在线转换成 Base64 编码',
+    name: 'Image to Base64',
+    desc: 'Convert images to Base64 encoding online without limitations on size and quantity',
     icon: IEpPaperclip,
     uuid: getUuid(),
     path: '/base64'
   },
   {
-    name: '图片水印',
-    desc: '自定义水印文字、字体大小、位置、颜色和透明度',
+    name: 'Image Watermark',
+    desc: 'Customize watermark text, font size, position, color, and opacity',
     icon: IEpPostcard,
     uuid: getUuid(),
     path: '/watermark'

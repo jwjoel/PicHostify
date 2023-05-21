@@ -9,12 +9,12 @@
           :autofocus="!userConfigInfo.token"
           type="password"
           show-password
-          placeholder="请输入 GitHub Token"
+          placeholder="Enter your GitHub Token"
         ></el-input>
       </el-form-item>
 
       <el-form-item class="operation">
-        <el-tooltip placement="top" content="选择已有的 GitHub 仓库">
+        <el-tooltip placement="top" content="Choose exist Github repository">
           <el-button
             :disabled="btnDisabled"
             plain
@@ -22,17 +22,17 @@
             native-type="submit"
             @click.prevent="getUserInfo()"
           >
-            {{ reConfig ? '' : '重新' }}手动配置
+            {{ reConfig ? 'Set Up Manually' : 'Reconfig Manually' }}
           </el-button>
         </el-tooltip>
-        <el-tooltip placement="top" content="自动创建 GitHub 仓库（适合新用户）">
+        <el-tooltip placement="top" content="Automatically create a GitHub repository (Recommend)">
           <el-button
             plain
             :disabled="btnDisabled"
             type="primary"
             @click.prevent="oneClickAutoConfig()"
           >
-            {{ reConfig ? '' : '重新' }}一键自动配置
+            {{ reConfig ? 'Set Up Automatically' : 'Reconfig Automatically' }}
           </el-button>
         </el-tooltip>
       </el-form-item>
@@ -44,23 +44,23 @@
       :label-position="labelPosition"
       v-if="userConfigInfo.token && userConfigInfo.owner"
       v-loading="userInfoLoading"
-      element-loading-text="正在加载用户信息..."
+      element-loading-text="Loading user info..."
     >
-      <el-form-item v-if="userConfigInfo.owner" label="用户名">
+      <el-form-item v-if="userConfigInfo.owner" label="Username">
         <el-input v-model="userConfigInfo.owner" readonly></el-input>
       </el-form-item>
 
-      <el-form-item v-if="userConfigInfo.email" label="邮箱">
+      <el-form-item v-if="userConfigInfo.email" label="Email">
         <el-input v-model="userConfigInfo.email" readonly></el-input>
       </el-form-item>
 
       <!-- 仓库 -->
-      <el-form-item v-if="userConfigInfo.repoList.length" label="选择仓库">
+      <el-form-item v-if="userConfigInfo.repoList.length" label="Choose Repository">
         <el-select
           v-model="userConfigInfo.selectedRepo"
           :filterable="true"
           :style="{ width: 'calc(100% - ' + refreshBoxWidth + 'rem)' }"
-          placeholder="请选择图床仓库..."
+          placeholder="Please choose repository"
           @change="selectRepo"
         >
           <el-option
@@ -81,22 +81,22 @@
       :label-position="labelPosition"
       v-if="userConfigInfo.token && userConfigInfo.selectedRepo && userConfigInfo.branchList.length"
       v-loading="branchLoading"
-      element-loading-text="正在加载分支信息..."
+      element-loading-text="Loading..."
     >
       <!-- 由于 GitHub API 目前不支持创建空分支，该功能暂时无法使用 -->
-      <el-form-item v-if="userConfigInfo.selectedRepo && 0" label="分支方式">
+      <el-form-item v-if="userConfigInfo.selectedRepo && 0" label="Branch method">
         <el-radio-group v-model="userConfigInfo.branchMode" @change="branchModeChange">
           <el-tooltip
             v-if="userConfigInfo.branchList.length"
-            :content="'选择 ' + userConfigInfo.selectedRepo + ' 仓库下的一个分支'"
+            :content="'Choose a branch from repository ' + userConfigInfo.selectedRepo"
             placement="top"
           >
             <el-radio label="repoBranch">
-              选择 {{ userConfigInfo.selectedRepo }} 仓库下的分支
+              Choose {{ userConfigInfo.selectedRepo }} Repository Branch
             </el-radio>
           </el-tooltip>
-          <el-tooltip content="手动创建一个新分支" placement="top">
-            <el-radio label="newBranch">新建分支</el-radio>
+          <el-tooltip content="Create a new branch manually" placement="top">
+            <el-radio label="newBranch">New branch</el-radio>
           </el-tooltip>
         </el-radio-group>
       </el-form-item>
@@ -107,13 +107,13 @@
           userConfigInfo.branchList.length &&
           userConfigInfo.branchMode === BranchModeEnum.repoBranch
         "
-        label="选择分支"
+        label="Choose branch"
       >
         <el-select
           v-model="userConfigInfo.selectedBranch"
           :filterable="true"
           :style="{ width: 'calc(100% - ' + refreshBoxWidth + 'rem)' }"
-          placeholder="请选择分支..."
+          placeholder="Please choose branch..."
           @change="selectBranch"
         >
           <el-option
@@ -128,12 +128,15 @@
       </el-form-item>
 
       <!-- 新建分支 -->
-      <el-form-item v-if="userConfigInfo.branchMode === BranchModeEnum.newBranch" label="新建分支">
+      <el-form-item
+        v-if="userConfigInfo.branchMode === BranchModeEnum.newBranch"
+        label="Create branch"
+      >
         <el-input
           v-model="newBranchInputVal"
           @blur="onNewBranchInputBlur"
           clearable
-          placeholder="请输入新建的分支..."
+          placeholder="Please create branch..."
           ref="newBranchInputRef"
         ></el-input>
       </el-form-item>
@@ -145,58 +148,65 @@
       :label-position="labelPosition"
       v-if="userConfigInfo.token && userConfigInfo.selectedBranch"
       v-loading="dirLoading"
-      element-loading-text="正在加载目录信息..."
+      element-loading-text="Loading..."
     >
-      <el-form-item v-if="userConfigInfo.selectedBranch" label="目录方式">
+      <el-form-item v-if="userConfigInfo.selectedBranch" label="Directory Method">
         <el-radio-group v-model="userConfigInfo.dirMode" @change="dirModeChange">
-          <el-tooltip content="手动输入一个新目录" placement="top" :offset="-1">
-            <el-radio label="newDir">新建目录</el-radio>
+          <el-tooltip content="Enter a directory manually" placement="top" :offset="-1">
+            <el-radio label="newDir">New Directory</el-radio>
           </el-tooltip>
 
           <el-tooltip
-            :content="'图片存储在 ' + userConfigInfo.selectedBranch + ' 分支的根目录下'"
+            :content="
+              'Images are stored in the root directory of the ' +
+              userConfigInfo.selectedBranch +
+              ' branch'
+            "
             placement="top"
             :offset="-1"
           >
-            <el-radio label="rootDir">根目录</el-radio>
+            <el-radio label="rootDir">Root Directory</el-radio>
           </el-tooltip>
 
           <el-tooltip
-            :content="'根据日期自动创建格式 YYYYMMDD 的目录'"
+            :content="`Automatically create directories with the format YYYYMMDD`"
             placement="top"
             :offset="-1"
           >
-            <el-radio label="autoDir">自动目录</el-radio>
+            <el-radio label="autoDir">Auto Directory</el-radio>
           </el-tooltip>
 
           <el-tooltip
             v-if="userConfigInfo.dirList.length && userConfigInfo.branchMode !== 'newBranch'"
-            :content="'选择 ' + userConfigInfo.selectedBranch + ' 分支下的一个目录'"
+            :content="`Select a directory under the ${userConfigInfo.selectedBranch} branch`"
             placement="top"
             :offset="-1"
           >
-            <el-radio label="repoDir"> 选择 {{ userConfigInfo.selectedRepo }} 仓库目录 </el-radio>
+            <el-radio label="repoDir"
+              >Select {{ userConfigInfo.selectedRepo }} Repository Directory</el-radio
+            >
           </el-tooltip>
         </el-radio-group>
       </el-form-item>
 
-      <el-form-item v-if="userConfigInfo.dirMode === 'autoDir'" label="自动目录">
+      <el-form-item v-if="userConfigInfo.dirMode === 'autoDir'" label="Auto Directory">
         <el-input v-model="userConfigInfo.selectedDir" readonly></el-input>
       </el-form-item>
 
-      <el-form-item v-if="userConfigInfo.dirMode === 'rootDir'" label="根目录">
+      <el-form-item v-if="userConfigInfo.dirMode === 'rootDir'" label="Root Directory">
         <el-input v-model="userConfigInfo.selectedDir" readonly></el-input>
       </el-form-item>
 
-      <el-form-item v-if="userConfigInfo.dirMode === 'newDir'" label="新建目录">
+      <el-form-item v-if="userConfigInfo.dirMode === 'newDir'" label="New Directory">
         <el-input
           ref="newDirInputRef"
           v-model="userConfigInfo.selectedDir"
           @input="persistUserConfigInfo()"
           clearable
-          placeholder="请输入新建的目录..."
+          placeholder="Enter the new directory name..."
         ></el-input>
       </el-form-item>
+
 
       <el-form-item
         v-if="
@@ -204,7 +214,7 @@
           userConfigInfo.dirMode === 'repoDir' &&
           userConfigInfo.branchMode !== 'newBranch'
         "
-        label="选择目录"
+        label="Choose dictionary"
       >
         <repo-dir-cascader :el-key="repoDirCascaderKey" :el-size="userSettings.elementPlusSize" />
       </el-form-item>
@@ -220,7 +230,7 @@
           @click="resetConfig()"
           v-if="userConfigInfo.owner"
         >
-          重置
+          Reset
         </el-button>
         <el-button
           plain
@@ -229,7 +239,7 @@
           @click="goUploadPage()"
           v-if="userConfigInfo.selectedRepo"
         >
-          确认
+          Confirm
         </el-button>
       </el-form-item>
     </el-form>

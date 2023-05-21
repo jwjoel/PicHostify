@@ -4,7 +4,7 @@ import { getUuid } from '@/utils'
 export const navInfoList = shallowRef([
   {
     uuid: getUuid(),
-    name: 'nav.config',
+    name: 'Config',
     icon: IEpEdit,
     isActive: false,
     path: '/config',
@@ -12,7 +12,7 @@ export const navInfoList = shallowRef([
   },
   {
     uuid: getUuid(),
-    name: 'nav.upload',
+    name: 'Upload',
     icon: IEpUpload,
     isActive: false,
     path: '/upload',
@@ -20,7 +20,7 @@ export const navInfoList = shallowRef([
   },
   {
     uuid: getUuid(),
-    name: 'nav.management',
+    name: 'Management',
     icon: IEpPicture,
     isActive: false,
     path: '/management',
@@ -28,7 +28,7 @@ export const navInfoList = shallowRef([
   },
   {
     uuid: getUuid(),
-    name: 'nav.settings',
+    name: 'Settings',
     icon: IEpSetting,
     isActive: false,
     path: '/settings',
@@ -36,7 +36,7 @@ export const navInfoList = shallowRef([
   },
   {
     uuid: getUuid(),
-    name: 'nav.toolbox',
+    name: 'Toolbox',
     icon: IEpFiles,
     isActive: false,
     path: '/toolbox',
@@ -44,7 +44,7 @@ export const navInfoList = shallowRef([
   },
   {
     uuid: getUuid(),
-    name: 'nav.feedback',
+    name: 'Feedback',
     icon: IEpChatDotRound,
     isActive: false,
     path: '/feedback',

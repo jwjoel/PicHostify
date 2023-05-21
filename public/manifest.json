@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "PicGo",
+    "version": "0.1.0",
+    "description": "An image hosting tool developed based on GitHub API. It provides services for image uploading, hosting, and common tools.",
+    "action": {
+      "default_popup": "index.html"
+    },
+    "permissions": ["storage"],
+    "icons": {
+      "16": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
+    },
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'"
+    }
+  }
+  

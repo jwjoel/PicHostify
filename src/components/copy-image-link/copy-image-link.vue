@@ -1,16 +1,16 @@
 <template>
   <div class="copy-image-link-box">
     <div class="left">
-      <el-tooltip content="请在'我的设置'进行图片链接相关配置" placement="top">
+      <el-tooltip content="Please configure image link settings in 'My Settings'" placement="top">
         <el-icon><IEpInfoFilled /></el-icon>
       </el-tooltip>
     </div>
     <div class="btn-box right">
       <el-tooltip
-        :content="'点击复制 ' + userSettings.imageLinkType.selected + ' 图片链接'"
+        :content="'Click to copy ' + userSettings.imageLinkType.selected + ' image link'"
         placement="top"
       >
-        <span class="btn-item flex-center" @click="oneClickCopy"> 复制链接 </span>
+        <span class="btn-item flex-center" @click="oneClickCopy"> Copy Link </span>
       </el-tooltip>
     </div>
   </div>

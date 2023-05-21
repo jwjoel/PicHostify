@@ -35,7 +35,7 @@
         <div class="content-box upload-area-status">
           <selected-info-bar />
           <div v-if="uploadImageList.length">
-            已上传：{{ uploadImageList.filter((x) => x.uploadStatus.progress === 100).length }} /
+            Uploaded:{{ uploadImageList.filter((x) => x.uploadStatus.progress === 100).length }} /
             {{ uploadImageList.length }}
           </div>
         </div>
@@ -45,10 +45,10 @@
       <div class="row-item" v-if="uploadImageList.length">
         <div class="content-box" style="text-align: right">
           <el-button :disabled="uploading" plain type="warning" @click="resetUploadInfo">
-            重置 <span class="shortcut-key">{{ shortcutKey }} + A</span>
+            Reset <span class="shortcut-key">{{ shortcutKey }} + A</span>
           </el-button>
           <el-button :disabled="uploading" plain type="primary" @click="uploadImage">
-            上传 <span class="shortcut-key">{{ shortcutKey }} + S</span>
+            Upload <span class="shortcut-key">{{ shortcutKey }} + S</span>
           </el-button>
         </div>
       </div>
@@ -135,19 +135,19 @@ const uploadImage = async () => {
   const { token, selectedRepo, selectedDir } = userConfigInfo
 
   if (!token) {
-    ElMessage.error('请先完成图床配置')
+    ElMessage.error('Please finish configurations first')
     await router.push('/config')
     return
   }
 
   if (!selectedRepo) {
-    ElMessage.error('请选择一个仓库')
+    ElMessage.error('Choose a repository')
     await router.push('/config')
     return
   }
 
   if (!selectedDir) {
-    ElMessage.error('目录不能为空')
+    ElMessage.error('Dictionary can not be empty')
     await router.push('/config')
     return
   }
@@ -155,7 +155,7 @@ const uploadImage = async () => {
   const notYetUploadList = uploadImageList.value.filter((x) => x.uploadStatus.progress === 0)
 
   if (notYetUploadList.length === 0) {
-    ElMessage.error('请选择要上传的图片')
+    ElMessage.error('Please choose image you wish to upload')
     return
   }
 
@@ -169,19 +169,19 @@ const uploadImage = async () => {
   switch (uploadRes) {
     // 单张图片上传成功
     case UploadStatusEnum.uploaded:
-      ElMessage.success('图片上传成功')
+      ElMessage.success('Upload Successful')
       await afterUploadSuccess(uploadedImg)
       break
 
     // 多张图片上传成功
     case UploadStatusEnum.allUploaded:
-      ElMessage.success('图片批量上传成功')
+      ElMessage.success('Upload Successful')
       await afterUploadSuccess(uploadedImg, true)
       break
 
     // 上传失败（网络错误等原因）
     case UploadStatusEnum.uploadFail:
-      ElMessage.error('上传失败，请稍后重试')
+      ElMessage.error('Upload failed, try again later')
   }
 }
 

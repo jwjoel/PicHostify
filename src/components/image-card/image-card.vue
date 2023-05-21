@@ -3,7 +3,7 @@
     class="image-card"
     :class="{ checked: imageObj.checked }"
     v-loading="imageObj.deleting"
-    element-loading-text="删除中..."
+    element-loading-text="Deleting..."
     @mouseenter="isShowOperateBtn = true"
     @mouseleave="isShowOperateBtn = false"
   >
@@ -55,9 +55,11 @@
           </div>
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item @click="deleteImageTips(imageObj)"> 删除 </el-dropdown-item>
-              <el-dropdown-item @click.self="showRenameInput(imageObj)"> 重命名 </el-dropdown-item>
-              <el-dropdown-item @click="viewImageProperties(imageObj)"> 属性 </el-dropdown-item>
+              <el-dropdown-item @click="deleteImageTips(imageObj)"> Delete </el-dropdown-item>
+              <el-dropdown-item @click.self="showRenameInput(imageObj)"> Rename </el-dropdown-item>
+              <el-dropdown-item @click="viewImageProperties(imageObj)">
+                Attribute
+              </el-dropdown-item>
             </el-dropdown-menu>
           </template>
         </el-dropdown>
@@ -131,9 +133,9 @@ const deleteOriginImage = (
     if (res) {
       if (isRename) {
         isRenameImg.value = false
-        ElMessage.success('更新成功')
+        ElMessage.success('Update Successful')
       } else {
-        ElMessage.success('删除成功')
+        ElMessage.success('Delete Successful')
       }
       await store.dispatch('DIR_IMAGE_LIST_REMOVE', imageObj)
       await store.dispatch('UPLOAD_IMG_LIST_REMOVE', imageObj.uuid)
@@ -147,10 +149,10 @@ const deleteOriginImage = (
 const deleteImageTips = (imageObj: UploadedImageModel) => {
   ElMessageBox.confirm(
     `
-    <div>此操作将会永久删除图片：</div>
+    <div>This operation will delete image permanently</div>
     <strong>${imageObj.name}</strong>
     `,
-    `删除提示`,
+    `Notice`,
     {
       dangerouslyUseHTMLString: true,
       type: 'warning'
@@ -160,7 +162,7 @@ const deleteImageTips = (imageObj: UploadedImageModel) => {
       deleteOriginImage(imageObj)
     })
     .catch(() => {
-      console.log('取消删除')
+      console.log('Cancel')
     })
 }
 
@@ -185,13 +187,13 @@ const updateRename = async () => {
   const { imageObj } = props
 
   if (!renameInputValue.value) {
-    ElMessage.error('图片名不能为空')
+    ElMessage.error('Name can not be empty')
     renameInputRef.value?.focus()
     return
   }
 
   if (renameInputValue.value === getFilename(imageObj.name)) {
-    ElMessage.error('图片名无改变')
+    ElMessage.error('Please enter a new name')
     isRenameImg.value = false
     return
   }
@@ -199,7 +201,7 @@ const updateRename = async () => {
   const renameImg = async () => {
     const loading = ElLoading.service({
       lock: true,
-      text: '正在重命名...'
+      text: 'Renameing...'
     })
 
     // 重命名的逻辑是先上传一张新名称的图片，再删除旧图片
@@ -239,23 +241,23 @@ const updateRename = async () => {
         await deleteOriginImage(imageObj, true)
         await store.dispatch('UPLOAD_IMG_LIST_REMOVE', imageObj.uuid)
       } else {
-        ElMessage.error('重命名失败')
+        ElMessage.error('Rename failed')
       }
     } else {
-      ElMessage.error('重命名失败')
+      ElMessage.error('Rename failed')
     }
     loading.close()
     isRenameImg.value = false
   }
 
-  ElMessageBox.confirm(`该图片重命名为 ${renameInputValue.value} ？`, `提示`, {
+  ElMessageBox.confirm(`Rename to ${renameInputValue.value} ？`, `Notice`, {
     type: 'info'
   })
     .then(() => {
       renameImg()
     })
     .catch(() => {
-      console.log('取消重命名')
+      console.log('Cancel')
       isRenameImg.value = false
     })
 }
@@ -267,10 +269,10 @@ const visibleChange = (e: boolean) => {
 const viewImageProperties = (imgObj: UploadedImageModel) => {
   ElMessageBox.confirm(
     `
-    <div>图片名称：<strong>${imgObj.name}</strong></div>
-    <div>图片大小：<strong>${getFileSize(imgObj.size)} KB</strong></div>
+    <div>Image name: <strong>${imgObj.name}</strong></div>
+    <div>Image size: <strong>${getFileSize(imgObj.size)} KB</strong></div>
     `,
-    `属性`,
+    `Arrribute`,
     {
       showCancelButton: false,
       showConfirmButton: false,

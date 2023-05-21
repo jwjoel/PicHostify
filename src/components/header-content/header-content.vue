@@ -3,9 +3,9 @@
     <div class="header-left">
       <div class="brand" @click="router.push('/')">
         <div class="logo">
-          <img src="../../assets/logo.png" alt="PicX" />
+          <img src="../../assets/logo.png" alt="PicGo" />
         </div>
-        <div class="title">PicX</div>
+        <div class="title">PicGo</div>
       </div>
       <div class="website-count">
         <site-count :isuv="false" />
@@ -15,7 +15,7 @@
     <div class="header-right">
       <div class="user-info" @click="onUserInfoClick">
         <div class="username">
-          {{ userConfigInfo.owner ? userConfigInfo.owner : $t('header.notLogin') }}
+          {{ userConfigInfo.owner ? userConfigInfo.owner : 'Login' }}
         </div>
 
         <div class="avatar" v-if="!userConfigInfo?.avatarUrl">
@@ -30,7 +30,7 @@
           </span>
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item command="logout"> {{ $t('header.logout') }} </el-dropdown-item>
+              <el-dropdown-item command="logout"> Logout </el-dropdown-item>
             </el-dropdown-menu>
           </template>
         </el-dropdown>

@@ -3,7 +3,7 @@
     <div v-if="showToolPanel" class="tool-panel">
       <div class="panel-header">
         <el-breadcrumb :separator-icon="ArrowRight">
-          <el-breadcrumb-item :to="{ path: toolboxPath }">工具箱</el-breadcrumb-item>
+          <el-breadcrumb-item :to="{ path: toolboxPath }">Tool box</el-breadcrumb-item>
           <el-breadcrumb-item>{{ currentTool.name }}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>

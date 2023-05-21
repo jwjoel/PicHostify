@@ -65,13 +65,11 @@ export const initEmptyRepo = async (
   showTips: boolean = true
 ) => {
   const README = `
-# Welcome to use PicX
+# Welcome to PicGo
 
-[PicX](https://github.com/XPoet/picx) is a simple and powerful image hosting tool. It supports image hosting services via GitHub repository.
+[PicGo](https://github.com/jwjoel/PicGo) is a simple and powerful image hosting tool. It supports image hosting services via GitHub repository.
 
-PicX is completely open source, and you can use it for free.
-
-If you like it, please give it a star on [GitHub](https://github.com/XPoet/picx).
+PicGo is completely open source, and you can use it for free.
         `
   const { owner, selectedRepo: repo, selectedBranch: branch } = userConfigInfo
 
@@ -79,7 +77,7 @@ If you like it, please give it a star on [GitHub](https://github.com/XPoet/picx)
 
   if (showTips) {
     initRepoLoading = ElLoading.service({
-      text: '正在初始化仓库...'
+      text: 'Initializing...'
     })
   }
 
@@ -89,7 +87,7 @@ If you like it, please give it a star on [GitHub](https://github.com/XPoet/picx)
     url: `/repos/${owner}/${repo}/contents/README.md`,
     method: 'PUT',
     data: {
-      message: 'Init repo via PicX(https://github.com/XPoet/picx)',
+      message: 'Init repo via PicGo(https://github.com/jwjoel/PicGo)',
       branch,
       content: window.btoa(README)
     },
@@ -99,7 +97,7 @@ If you like it, please give it a star on [GitHub](https://github.com/XPoet/picx)
   if (res) {
     initRepoLoading?.close()
   } else if (showTips) {
-    ElMessage.error('仓库初始化失败')
+    ElMessage.error('Init failed')
   }
 }
 

@@ -54,18 +54,18 @@ export const initReHandConfig = () => {
  */
 export const goUploadPage = async () => {
   const { selectedDir, dirMode } = userConfigInfo
-  let warningMessage: string = '目录不能为空！'
+  let warningMessage: string = 'Directory cannot be empty!'
 
   if (selectedDir === '') {
     switch (dirMode) {
       case DirModeEnum.newDir:
-        warningMessage = '请在输入框输入一个新目录！'
+        warningMessage = 'Please enter a new directory in the input box!'
         break
       case DirModeEnum.repoDir:
-        warningMessage = `请选择 ${userConfigInfo.selectedRepo} 仓库下的一个目录！`
+        warningMessage = `Please select a directory under the ${userConfigInfo.selectedRepo} repository!`
         break
       default:
-        warningMessage = '请在输入框输入一个新目录！'
+        warningMessage = 'Please enter a new directory in the input box!'
         break
     }
     ElMessage.warning(warningMessage)
@@ -81,33 +81,33 @@ export const oneClickAutoConfig = async () => {
   const { token } = userConfigInfo
 
   if (!token) {
-    ElMessage.error('GitHub Token 不能为空')
+    ElMessage.error('GitHub Token cannot be empty')
     return
   }
 
   const loading = ElLoading.service({
     lock: true,
-    text: '正在自动配置...'
+    text: 'Auto configuring...'
   })
 
   const userInfo = await getGitHubUserInfo(userConfigInfo.token)
   console.log('getGitHubUserInfo >> ', userInfo)
 
   if (!userInfo) {
-    loading.close()
-    ElMessage.error('用户信息获取失败，请确认 Token 是否正确')
-    return
+    loading.close();
+    ElMessage.error('Failed to retrieve user information. Please check if the Token is correct');
+    return;
   }
 
-  saveUserInfo(userInfo)
+  saveUserInfo(userInfo);
 
   const repoInfo = await createRepo(userConfigInfo.token)
   console.log('createRepo >> ', repoInfo)
 
   if (!repoInfo) {
-    loading.close()
-    ElMessage.error('自动创建 GitHub 仓库失败，请稍后再试')
-    return
+    loading.close();
+    ElMessage.error('Failed to create GitHub repository. Please try again later')
+    return;
   }
 
   userConfigInfo.repoList = [{ value: INIT_REPO_NAME, label: INIT_REPO_NAME }]
@@ -121,6 +121,6 @@ export const oneClickAutoConfig = async () => {
   persistUserConfigInfo()
   await initEmptyRepo(userConfigInfo, false)
   loading.close()
-  ElMessage.success('自动配置成功')
+  ElMessage.success('Auto configuration successful')
   await router.push('/upload')
 }

@@ -2,12 +2,12 @@
   <el-card>
     <template #header>
       <div class="card-header">
-        <span>配置自定义图片链接规则</span>
+        <span>Customize Image Link Rules</span>
       </div>
     </template>
     <el-table :data="userSettings.imageLinkType.presetList" style="width: 100%">
-      <el-table-column prop="name" label="类型" width="120" />
-      <el-table-column label="CDN 规则">
+      <el-table-column prop="name" label="Type" width="120" />
+      <el-table-column label="CDN Rules">
         <template #default="scope">
           <div
             :contenteditable="scope.row.editable"
@@ -26,7 +26,7 @@
             :disabled="!scope.row.editable"
             @click="removeImageLinkRule(scope.row)"
           >
-            删除
+            Delete
           </el-button>
         </template>
       </el-table-column>
@@ -41,16 +41,16 @@
         size="default"
       >
         <el-form-item
-          label="图片链接类型"
+          label="Image Link Type"
           prop="name"
-          :rules="[{ required: true, message: '图片链接类型名称不能为空' }]"
+          :rules="[{ required: true, message: 'Image link type name cannot be empty' }]"
         >
           <el-input v-model="imageLinkRuleForm.name" type="text" />
         </el-form-item>
         <el-form-item
-          label="图片链接规则"
+          label="Image Link Rule"
           prop="rule"
-          :rules="[{ required: true, message: '图片链接规则不能为空' }]"
+          :rules="[{ required: true, message: 'Image link rule cannot be empty' }]"
         >
           <el-input v-model="imageLinkRuleForm.rule" type="text" />
         </el-form-item>
@@ -60,7 +60,7 @@
             :disabled="!imageLinkRuleForm.name || !imageLinkRuleForm.rule"
             @click="addImageLinkRule(formRef)"
           >
-            添加图片链接规则
+            Add Image Link Rule
           </el-button>
         </el-form-item>
       </el-form>
@@ -92,8 +92,8 @@ const editImageLinkRule = (rule: string, id: string) => {
 
 const removeImageLinkRule = (obj: ImageLinkRuleModel) => {
   ElMessageBox.confirm(
-    `<span>此操作将永久删除图片链接规则：</span><strong>${obj.name}</strong>`,
-    `删除提示`,
+    `<span>This action will permanently delete the image link rule: </span><strong>${obj.name}</strong>`,
+    `Deletion Prompt`,
     {
       dangerouslyUseHTMLString: true,
       type: 'warning'
@@ -103,7 +103,7 @@ const removeImageLinkRule = (obj: ImageLinkRuleModel) => {
       store.dispatch('DEL_IMAGE_LINK_TYPE_RULE', obj.id)
     })
     .catch(() => {
-      console.log('取消删除')
+      console.log('Deletion canceled')
     })
 }
 

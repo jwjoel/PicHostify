@@ -9,7 +9,7 @@
     :key="elKey"
     v-model="userConfigInfo.selectedDirList"
     filterable
-    placeholder="请选择一个目录..."
+    placeholder="Please choose a dictionary..."
     :clearable="elClearable"
     @change="cascaderChange"
   />

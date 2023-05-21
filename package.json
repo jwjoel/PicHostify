@@ -1,13 +1,13 @@
 {
-  "name": "picx",
-  "version": "2.3.3",
+  "name": "picgo",
+  "version": "1.0.0",
   "private": false,
-  "author": "XPoet <i@xpoet.cn>",
+  "author": "jwjoel <joel.bradley.w@gmail.com>",
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/XPoet/picx/issues"
+    "url": "https://github.com/jwjoel/PicGo/issues"
   },
-  "homepage": "https://github.com/XPoet/picx#readme",
+  "homepage": "https://github.com/jwjoel/PicGo#readme",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

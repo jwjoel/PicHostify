@@ -61,7 +61,7 @@ const transformImageLink = (
 const copyNotification = (message: string, duration: number = 6500) => {
   ElNotification({
     type: 'success',
-    title: '复制成功',
+    title: 'Copied',
     message,
     duration,
     offset: 50
@@ -92,13 +92,11 @@ export const copyImageLink = (
   )
   if (link) {
     copyText(link, () => {
-      const msg = `${imgObj.name} 图片链接已${
-        autoCopy ? '自动' : ''
-      }复制到系统剪贴板，可使用快捷键 ${getCopyShortcutKey()} 进行粘贴。`
+      const msg = `${imgObj.name} image link ${autoCopy ? '' : ''}copied to clipboard.`
       copyNotification(msg)
     })
   } else {
-    ElMessage.error(`复制失败`)
+    ElMessage.error('Copy failed')
   }
 }
 
@@ -126,12 +124,12 @@ export const batchCopyImageLinks = (
       linksTxt += `${link}${index < uploadedImgList.length - 1 ? '\n' : ''}`
     })
     copyText(linksTxt, () => {
-      const msg = `已${autoCopy ? '自动' : ''}复制 ${
+      const msg = `${autoCopy ? 'Automatically ' : ''}copied ${
         uploadedImgList.length
-      } 张图片链接到系统剪贴板，可使用快捷键 ${getCopyShortcutKey()} 进行粘贴。`
+      } image links to clipboard. You can use the shortcut ${getCopyShortcutKey()} to paste.`
       copyNotification(msg)
     })
   } else {
-    console.warn('请先选择图片')
+    console.warn('Choose image first')
   }
 }

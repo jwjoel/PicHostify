@@ -10,18 +10,17 @@ export default function configPWAPlugin() {
     registerType: 'autoUpdate',
     injectRegister: 'auto',
     manifest: {
-      name: 'PicX 图床',
-      short_name: 'PicX',
-      description:
-        'PicX 是一款基于 GitHub API 开发的图床工具，提供图片上传托管和生成图片链接服务。',
+      name: 'PicGo',
+      short_name: 'PicGo',
+      description: 'PicGo is a GitHub API based image hosting platform',
       icons: [
         {
-          src: './logo@192x192.png',
+          src: './logo.png',
           sizes: '192x192',
           type: 'image/png'
         },
         {
-          src: './logo@512x512.png',
+          src: './logo.png',
           sizes: '192x192',
           type: 'image/png'
         }

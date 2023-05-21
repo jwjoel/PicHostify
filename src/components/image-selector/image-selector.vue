@@ -2,23 +2,24 @@
   <div class="selector-wrapper" v-if="getImageCardCheckedNum">
     <div class="selector-left-box">
       <el-checkbox
-        :label="allChecked ? '取消全选' : '全选'"
+        :label="allChecked ? 'Cancel Selection' : 'Select All'"
         v-model="allChecked"
         @change="allCheckChange"
       ></el-checkbox>
-      <div class="item">已选择 {{ getImageCardCheckedNum }} 张图片</div>
-      <div class="item cancel-select-btn" @click="cancelPick">取消选择</div>
+      <div class="item">Selected {{ getImageCardCheckedNum }} images</div>
+      <div class="item cancel-select-btn" @click="cancelPick">Cancel Selection</div>
     </div>
     <div class="selector-right-box">
-      <el-tooltip placement="top" content="批量复制链接">
+      <el-tooltip placement="top" content="Copy Links">
         <el-icon class="btn-icon" @click="batchCopy"><IEpCopyDocument /></el-icon>
       </el-tooltip>
-      <el-tooltip placement="top" content="批量删除图片">
+      <el-tooltip placement="top" content="Delete Images">
         <el-icon class="btn-icon" @click="batchDeleteImage"><IEpDelete /></el-icon>
       </el-tooltip>
     </div>
   </div>
 </template>
+
 <script lang="ts" setup>
 import { computed, onMounted, watch, ref } from 'vue'
 import { useStore } from '@/store'
@@ -65,8 +66,8 @@ const cancelPick = () => {
 const batchDeleteImage = () => {
   if (getImageCardCheckedArr.value?.length > 0) {
     ElMessageBox.confirm(
-      `已选中 ${getImageCardCheckedArr.value?.length} 张图片，是否批量删除？`,
-      '删除提示',
+      `Are you sure you want to delete the selected ${getImageCardCheckedArr.value?.length} images?`,
+      'Deletion Prompt',
       {
         type: 'warning'
       }
@@ -74,20 +75,20 @@ const batchDeleteImage = () => {
       .then(async () => {
         const res = await deleteImageOfGitHub(getImageCardCheckedArr.value, userConfigInfo)
         if (res === DeleteStatusEnum.deleted) {
-          ElMessage.success('删除成功')
+          ElMessage.success('Deletion successful')
         }
         if (res === DeleteStatusEnum.allDeleted) {
-          ElMessage.success('批量删除成功')
+          ElMessage.success('Batch deletion successful')
         }
         if (res === DeleteStatusEnum.deleteFail) {
-          ElMessage.error('删除失败，请稍后重试')
+          ElMessage.error('Deletion failed, please try again later')
         }
       })
       .catch(() => {
-        console.log('取消批量删除')
+        console.log('Batch deletion canceled')
       })
   } else {
-    ElMessage.warning('请先选择图片')
+    ElMessage.warning('Please select images first')
   }
 }
 

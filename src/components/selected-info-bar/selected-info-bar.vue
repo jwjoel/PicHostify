@@ -1,19 +1,19 @@
 <template>
   <div class="selected-info-bar-box" v-if="userConfigInfo.selectedRepo">
     <span class="info-item repo">
-      仓库：
+      Repository
       <el-tag disable-transitions>
         {{ userConfigInfo.selectedRepo }}
       </el-tag>
     </span>
     <span class="info-item branch" v-if="userConfigInfo.selectedBranch">
-      分支：
+      Branch
       <el-tag disable-transitions>
         {{ userConfigInfo.selectedBranch }}
       </el-tag>
     </span>
     <span class="info-item dir">
-      目录：
+      Path
       <el-tag
         disable-transitions
         v-if="userConfigInfo.dirMode !== DirModeEnum.repoDir || barType === 'management'"

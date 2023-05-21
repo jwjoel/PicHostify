@@ -1,31 +1,31 @@
 module.exports = {
-  // type 类型（定义之后，可通过上下键选择）
+  // Type definitions (selectable with up and down arrow keys)
   types: [
-    { value: 'feat', name: 'feat:     新增功能' },
-    { value: 'fix', name: 'fix:      修复 bug' },
-    { value: 'docs', name: 'docs:     文档变更' },
-    { value: 'style', name: 'style:    代码格式（不影响功能，例如空格、分号等格式修正）' },
-    { value: 'refactor', name: 'refactor: 代码重构（不包括 bug 修复、功能新增）' },
-    { value: 'perf', name: 'perf:     性能优化' },
-    { value: 'test', name: 'test:     添加、修改测试用例' },
-    { value: 'build', name: 'build:    构建流程、外部依赖变更（如升级 npm 包、修改 webpack 配置等）' },
-    { value: 'ci', name: 'ci:       修改 CI 配置、脚本' },
-    { value: 'chore', name: 'chore:    对构建过程或辅助工具和库的更改（不影响源文件、测试用例）' },
-    { value: 'revert', name: 'revert:   回滚 commit' }
+    { value: 'feat', name: 'feat:     New feature' },
+    { value: 'fix', name: 'fix:      Bug fix' },
+    { value: 'docs', name: 'docs:     Documentation changes' },
+    { value: 'style', name: 'style:    Code style (formatting, missing semicolons, etc.)' },
+    { value: 'refactor', name: 'refactor: Code refactoring (no bug fixes or new features)' },
+    { value: 'perf', name: 'perf:     Performance improvements' },
+    { value: 'test', name: 'test:     Adding or modifying tests' },
+    { value: 'build', name: 'build:    Build process or external dependencies' },
+    { value: 'ci', name: 'ci:       Changes to CI configuration or scripts' },
+    { value: 'chore', name: 'chore:    Changes to the build process or auxiliary tools/libraries' },
+    { value: 'revert', name: 'revert:   Revert a previous commit' }
   ],
 
-  // scope 类型（定义之后，可通过上下键选择）
+  // Scope definitions (selectable with up and down arrow keys)
   scopes: [
-    ['components', '组件相关'],
-    ['hooks', 'hook 相关'],
-    ['utils', 'utils 相关'],
-    ['element-ui', '对 element-ui 的调整'],
-    ['styles', '样式相关'],
-    ['deps', '项目依赖'],
-    ['auth', '对 auth 修改'],
-    ['other', '其他修改'],
-    // 如果选择 custom，后面会让你再输入一个自定义的 scope。也可以不设置此项，把后面的 allowCustomScopes 设置为 true
-    ['custom', '以上都不是？我要自定义']
+    ['components', 'Component related'],
+    ['hooks', 'Hook related'],
+    ['utils', 'Utility related'],
+    ['element-ui', 'Changes to element-ui'],
+    ['styles', 'Style related'],
+    ['deps', 'Project dependencies'],
+    ['auth', 'Changes to auth'],
+    ['other', 'Other changes'],
+    // If selecting custom, it will prompt for a custom scope input. You can also skip this and set allowCustomScopes to true.
+    ['custom', 'None of the above? I want to customize']
   ].map(([value, description]) => {
     return {
       value,
@@ -33,7 +33,7 @@ module.exports = {
     }
   }),
 
-  // 是否允许自定义填写 scope，在 scope 选择的时候，会有 empty 和 custom 可以选择。
+  // Allow custom scope input in addition to empty and custom options
   // allowCustomScopes: true,
 
   // allowTicketNumber: false,
@@ -41,8 +41,7 @@ module.exports = {
   // ticketNumberPrefix: 'TICKET-',
   // ticketNumberRegExp: '\\d{1,5}',
 
-
-  // 针对每一个 type 去定义对应的 scopes，例如 fix
+  // Define scope overrides for each type, e.g. fix
   /*
   scopeOverrides: {
     fix: [
@@ -54,29 +53,28 @@ module.exports = {
   },
   */
 
-  // 交互提示信息
+  // Interactive prompt messages
   messages: {
-    type: '确保本次提交遵循 Angular 规范！\n选择你要提交的类型：',
-    scope: '\n选择一个 scope（可选）：',
-    // 选择 scope: custom 时会出下面的提示
-    customScope: '请输入自定义的 scope：',
-    subject: '填写简短精炼的变更描述：\n',
-    body:
-      '填写更加详细的变更描述（可选）。使用 "|" 换行：\n',
-    breaking: '列举非兼容性重大的变更（可选）：\n',
-    footer: '列举出所有变更的 ISSUES CLOSED（可选）。 例如: #31, #34：\n',
-    confirmCommit: '确认提交？'
+    type: 'Ensure your commit follows the Angular convention!\nSelect the type of commit you are making:',
+    scope: '\nSelect a scope (optional):',
+    // Prompt when custom scope is selected
+    customScope: 'Enter a custom scope:',
+    subject: 'Write a short and concise change description:\n',
+    body: 'Write a more detailed change description (optional). Use "|" for new lines:\n',
+    breaking: 'List any breaking changes (optional):\n',
+    footer: 'List any issues closed by this change (optional). For example: #31, #34:\n',
+    confirmCommit: 'Confirm commit?'
   },
 
-  // 设置只有 type 选择了 feat 或 fix，才询问 breaking message
+  // Only ask for breaking change if type is feat or fix
   allowBreakingChanges: ['feat', 'fix'],
 
-  // 跳过要询问的步骤
+  // Skip specific questions
   // skipQuestions: ['body', 'footer'],
 
-  // subject 限制长度
+  // Subject length limit
   subjectLimit: 100,
-  breaklineChar: '|' // 支持 body 和 footer
+  breaklineChar: '|' // Support for body and footer
   // footerPrefix : 'ISSUES CLOSED:'
   // askForBreakingChangeFirst : true,
 }

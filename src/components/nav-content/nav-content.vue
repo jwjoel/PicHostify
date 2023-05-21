@@ -13,48 +13,10 @@
           <el-icon :size="navIconSize">
             <component :is="nav.icon"></component>
           </el-icon>
-          <span class="nav-name">{{ $t(nav.name) }}</span>
+          <span class="nav-name">{{ nav.name }}</span>
         </div>
       </li>
     </ul>
-    <div class="nav-item quick-actions flex-center">
-      <el-popover placement="right" :width="200" trigger="click" :show-arrow="false">
-        <template #reference>
-          <div class="nav-content">
-            <el-icon :size="navIconSize">
-              <IEpOperation />
-            </el-icon>
-            <span class="nav-name">{{ $t('nav.actions') }}</span>
-          </div>
-        </template>
-        <div class="quick-actions-box">
-          <el-switch
-            v-model="isDarkMode"
-            class="mb-2"
-            :active-text="$t('actions.night')"
-            @change="themeModeChange"
-          />
-          <el-switch
-            v-model="userSettings.watermark.enable"
-            class="mb-2"
-            :active-text="$t('actions.watermark')"
-            @change="persistUserSettings"
-          />
-          <el-switch
-            v-model="userSettings.compress.enable"
-            class="mb-2"
-            :active-text="$t('actions.compress')"
-            @change="persistUserSettings"
-          />
-          <el-switch
-            v-model="userSettings.imageLinkFormat.enable"
-            class="mb-2"
-            :active-text="$t('actions.transform') + userSettings.imageLinkFormat.selected"
-            @change="persistUserSettings"
-          />
-        </div>
-      </el-popover>
-    </div>
   </aside>
 </template>
 
@@ -90,13 +52,13 @@ const onNavClick = (e: any) => {
 
   if (path === '/management') {
     if (userConfigInfo.selectedRepo === '') {
-      ElMessage.warning('请选择一个仓库')
+      ElMessage.warning('Choose a repository')
       router.push('/config')
       return
     }
 
     if (userConfigInfo.selectedDir === '') {
-      ElMessage.warning('目录不能为空')
+      ElMessage.warning('Dictionary can not be empty')
       router.push('/config')
       return
     }

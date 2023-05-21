@@ -35,11 +35,11 @@ const contextmenuDirective: Directive = {
       const copyItem = menuEle?.querySelector('.copy-link')
 
       if (type === ContextmenuEnum.img) {
-        copyItem.style.display = 'block'
-        uploadItem.innerHTML = `从当前位置上传新图片`
+        copyItem.style.display = 'block';
+        uploadItem.innerHTML = `Upload a new image from the current location`;
       } else {
-        copyItem.style.display = 'none'
-        uploadItem.innerHTML = `上传图片到 < ${selectedDir === '/' ? '根目录' : selectedDir} > 目录`
+        copyItem.style.display = 'none';
+        uploadItem.innerHTML = `Upload image to < ${selectedDir === '/' ? 'Root Directory' : selectedDir} > directory`;
       }
 
       let setLeft = e.clientX

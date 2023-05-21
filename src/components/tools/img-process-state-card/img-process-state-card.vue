@@ -1,6 +1,6 @@
 <template>
   <div class="img-process-state-card-container">
-    <div class="img-container" v-loading="imgObj.processing" element-loading-text="正在压缩...">
+    <div class="img-container" v-loading="imgObj.processing" element-loading-text="Compressing..">
       <el-image
         :src="imgObj.finialBase64 || imgObj.originalBase64"
         fit="cover"
@@ -30,16 +30,16 @@
       v-if="imgObj.finialFile"
       @click="download(imgObj.finialFile)"
     >
-      点击下载
+      Download
     </div>
     <div
       class="operate-container flex-center"
       v-if="cardType === 'base64' && imgObj.originalBase64"
       @click="copyBase64(imgObj.originalBase64)"
     >
-      点击复制 Base64 编码
+      Copy Base64 Encode Text
     </div>
-    <el-tooltip placement="top" :offset="8" content="删除">
+    <el-tooltip placement="top" :offset="8" content="Delete">
       <el-icon class="del-btn" @click="remove(imgObj.uuid)"><IEpRemove /></el-icon>
     </el-tooltip>
   </div>
@@ -75,7 +75,7 @@ const download = (file: File) => {
 // 复制 Base64 编码
 const copyBase64 = (base64: string) => {
   copyText(base64, () => {
-    ElMessage.success({ message: ' Base64 编码复制成功' })
+    ElMessage.success({ message: ' Copied' })
   })
 }
 </script>
