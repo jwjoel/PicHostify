@@ -155,7 +155,9 @@ const deleteImageTips = (imageObj: UploadedImageModel) => {
     `Notice`,
     {
       dangerouslyUseHTMLString: true,
-      type: 'warning'
+      type: 'warning',
+      confirmButtonText: 'Confirm',
+      cancelButtonText: 'Cancel'
     }
   )
     .then(() => {
@@ -251,7 +253,9 @@ const updateRename = async () => {
   }
 
   ElMessageBox.confirm(`Rename to ${renameInputValue.value} ？`, `Notice`, {
-    type: 'info'
+    type: 'info',
+    confirmButtonText: 'Confirm',
+    cancelButtonText: 'Cancel'
   })
     .then(() => {
       renameImg()
@@ -275,6 +279,8 @@ const viewImageProperties = (imgObj: UploadedImageModel) => {
     `Arrribute`,
     {
       showCancelButton: false,
+      confirmButtonText: 'Confirm',
+      cancelButtonText: 'Cancel',
       showConfirmButton: false,
       dangerouslyUseHTMLString: true,
       type: 'info'

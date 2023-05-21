@@ -72,7 +72,7 @@ Should you encounter any issues during use, please raise an [issue](https://gith
 
 We welcome contributions in many forms, including but not limited to, improving the user interface, adding new features, optimizing performance, fixing bugs, and enhancing documentation.
 
-This project is possible thanks to all of its contributors:
+Thanks to all of the contributors:
 
 <p align="center">
   <a href="https://github.com/jwjoel/PicHostify/graphs/contributors">

@@ -86,7 +86,7 @@ const initUserSettings = (): UserSettingsModel => {
 }
 
 const ruleVerification = (rule: ImageLinkRuleModel, type: 'add' | 'edit', callback: any) => {
-  const typeTxt = type === 'add' ? '添加' : '编辑'
+  const typeTxt = type === 'add' ? 'Add' : 'Edit'
   const tmpList = []
 
   if (!rule.rule.includes('{{owner}}')) {
@@ -107,26 +107,28 @@ const ruleVerification = (rule: ImageLinkRuleModel, type: 'add' | 'edit', callba
   }
 
   if (rule.rule.includes('{{path}}')) {
-    let confirmTxt = `图片链接规则缺少 ${tmpList.join('、')}，是否确认${typeTxt}？`
+    let confirmTxt = `Lack of ${tmpList.join('、')}, confirm ${typeTxt}?`
 
     if (type === 'edit') {
-      confirmTxt = `注意：当前编辑的图片链接规则缺少 ${tmpList.join('、')}`
+      confirmTxt = `Notice: Lack of ${tmpList.join('、')}`
     }
 
-    ElMessageBox.confirm(confirmTxt, `${typeTxt}提示`, {
+    ElMessageBox.confirm(confirmTxt, `${typeTxt}Notice`, {
       type: 'warning',
       showClose: type === 'add',
-      showCancelButton: type === 'add'
+      showCancelButton: type === 'add',
+      confirmButtonText: 'Confirm',
+      cancelButtonText: 'Cancel'
     })
       .then(() => {
         callback(true)
       })
       .catch(() => {
-        console.log(`取消${typeTxt}`)
+        console.log(`Cancel${typeTxt}`)
         callback(false)
       })
   } else {
-    ElMessage.error(`${typeTxt}失败，图片链接规则必须包含 {{path}}`)
+    ElMessage.error(`${typeTxt}failed, must include {{path}}`)
   }
 }
 
@@ -159,7 +161,7 @@ const userSettingsModule: Module<UserSettingsStateTypes, RootStateTypes> = {
           }
         })
       } else {
-        ElMessage.error('添加失败，该图片链接规则规则已存在')
+        ElMessage.error('Already exist')
       }
     },
 

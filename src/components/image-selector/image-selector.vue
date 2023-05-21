@@ -67,9 +67,11 @@ const batchDeleteImage = () => {
   if (getImageCardCheckedArr.value?.length > 0) {
     ElMessageBox.confirm(
       `Are you sure you want to delete the selected ${getImageCardCheckedArr.value?.length} images?`,
-      'Deletion Prompt',
+      'Notice',
       {
-        type: 'warning'
+        type: 'warning',
+        confirmButtonText: 'Confirm',
+        cancelButtonText: 'Cancel'
       }
     )
       .then(async () => {

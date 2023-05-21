@@ -93,10 +93,12 @@ const editImageLinkRule = (rule: string, id: string) => {
 const removeImageLinkRule = (obj: ImageLinkRuleModel) => {
   ElMessageBox.confirm(
     `<span>This action will permanently delete the image link rule: </span><strong>${obj.name}</strong>`,
-    `Deletion Prompt`,
+    `Notice`,
     {
       dangerouslyUseHTMLString: true,
-      type: 'warning'
+      type: 'warning',
+      confirmButtonText: 'Confirm',
+      cancelButtonText: 'Cancel'
     }
   )
     .then(() => {
