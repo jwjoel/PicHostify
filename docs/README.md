@@ -27,7 +27,7 @@ Start by creating a [GitHub Token](https://github.com/settings/tokens/new) and u
 
 ## :inbox_tray: Installation
 
-[PicHostify](https://chrome.google.com/webstore/detail/pichostify/ijfbmlefagnfgejnnpamioalofgicadb) is now available in the Google Chrome App Store.
+[PicHostify](https://chrome.google.com/webstore/detail/pichostify/ijfbmlefagnfgejnnpamioalofgicadb) is now available in the Google Chrome App Store, try it [here](https://chrome.google.com/webstore/detail/pichostify/ijfbmlefagnfgejnnpamioalofgicadb).
 
 If you wish to deploy locally:
 
