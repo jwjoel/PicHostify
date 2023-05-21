@@ -61,6 +61,10 @@ PicHostify will soon be available in the Google Chrome App Store, but you can al
 - **Dark Mode:** A more comfortable viewing experience at night.
 - **Image Watermarks:** Configure for added image protection.
 
+## :speech_balloon: Feedback
+
+Should you encounter any issues during use, please raise an [issue](https://github.com/jwjoel/PicHostify/issues) for the author to address.
+
 ## :handshake: Contribution
 
 We welcome contributions in many forms, including but not limited to, improving the user interface, adding new features, optimizing performance, fixing bugs, and enhancing documentation.
@@ -72,10 +76,6 @@ This project is possible thanks to all of its contributors:
     <img src="https://contrib.rocks/image?repo=jwjoel/PicHostify" />
   </a>
 </p>
-
-## :speech_balloon: Feedback
-
-Should you encounter any issues during use, please raise an [issue](https://github.com/jwjoel/PicHostify/issues) for the author to address.
 
 ## :heart: Acknowledgement
 
