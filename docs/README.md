@@ -27,7 +27,7 @@ Start by creating a [GitHub Token](https://github.com/settings/tokens/new) and u
 
 ## :inbox_tray: Installation
 
-PicHostify will soon be available in the Google Chrome App Store, but you can also build it from the source code:
+PicHostify is available in the Google Chrome App Store, search [PicHostify](https://chrome.google.com/webstore/detail/pichostify/ijfbmlefagnfgejnnpamioalofgicadb).
 
 1. Clone the repository or download the source code:
 
@@ -72,7 +72,7 @@ Should you encounter any issues during use, please raise an [issue](https://gith
 
 ## :handshake: Contribution
 
-We welcome contributions in many forms, including but not limited to, improving the user interface, adding new features, optimizing performance, fixing bugs, and enhancing documentation.
+We welcome contributions including but not limited to, improving the user interface, adding new features, optimizing performance, fixing bugs, and enhancing documentation.
 
 Thanks to all of the contributors:
 
