@@ -65,11 +65,11 @@ export const initEmptyRepo = async (
   showTips: boolean = true
 ) => {
   const README = `
-# Welcome to PicGo
+# PicHostify Storage
 
-[PicGo](https://github.com/jwjoel/PicGo) is a simple and powerful image hosting tool. It supports image hosting services via GitHub repository.
+[PicHostify](https://github.com/jwjoel/PicHostify) is a simple and powerful image hosting tool. It supports image hosting services via GitHub repository.
 
-PicGo is completely open source, and you can use it for free.
+PicHostify is completely open source, and you can use it for free.
         `
   const { owner, selectedRepo: repo, selectedBranch: branch } = userConfigInfo
 
@@ -87,7 +87,7 @@ PicGo is completely open source, and you can use it for free.
     url: `/repos/${owner}/${repo}/contents/README.md`,
     method: 'PUT',
     data: {
-      message: 'Init repo via PicGo(https://github.com/jwjoel/PicGo)',
+      message: 'Init repo via PicHostify(https://github.com/jwjoel/PicHostify)',
       branch,
       content: window.btoa(README)
     },

@@ -39,7 +39,7 @@ export default function request(config: CustomAxiosRequestConfig): Promise<any> 
           const code = err?.status
           const msg = err?.data?.message
           if (!requestConfig?.noShowErrorMsg) {
-            console.error('PicGo Error // ', err)
+            console.error('PicHostify Error // ', err)
             if (code !== undefined && msg !== undefined) {
               ElMessage.error({ duration: 6000, message: `Code: ${code}, Message: ${msg}` })
             }

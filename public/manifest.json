@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "PicGo",
+    "name": "PicHostify",
     "version": "0.1.0",
     "description": "An image hosting tool developed based on GitHub API. It provides services for image uploading, hosting, and common tools.",
     "action": {

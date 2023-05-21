@@ -1,41 +1,41 @@
 <p align="center">
-  <a href="https://github.com/jwjoel/PicGo" >
-    <img width="200" alt="PicGo" src="https://cdn.staticaly.com/gh/jwjoel/images-hosting@main/20230521/logo.4hkvjfbcwn80.png">
+  <a href="https://github.com/jwjoel/PicHostify" >
+    <img width="200" alt="PicHostify" src="https://cdn.staticaly.com/gh/jwjoel/images-hosting@main/20230521/logo.4hkvjfbcwn80.png">
   </a>
 </p>
 
-<h1 align="center"> PicGo Image Hosting </h1>
+<h1 align="center"> PicHostify Image Hosting </h1>
 
 <p align="center">
-  <a href="https://github.com/jwjoel/PicGo/releases"><img src="https://img.shields.io/github/release/jwjoel/PicGo.svg" alt="Release"></a>
-  <a href="https://github.com/jwjoel/PicGo/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/jwjoel/PicGo.svg" alt="License"></a>
+  <a href="https://github.com/jwjoel/PicHostify/releases"><img src="https://img.shields.io/github/release/jwjoel/PicHostify.svg" alt="Release"></a>
+  <a href="https://github.com/jwjoel/PicHostify/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/jwjoel/PicHostify.svg" alt="License"></a>
 </p>
 
-PicGo is a browser extension inspired by PicX, offering a comprehensive image hosting solution using the GitHub API. It's free, secure, and facilitates image uploading, hosting, link generation, and offers various image manipulation tools.
+PicHostify is a browser extension inspired by PicX, offering a comprehensive image hosting solution using the GitHub API. It's free, secure, and facilitates image uploading, hosting, link generation, and offers various image manipulation tools.
 
 ---
 
 ## :star2: Highlights
 
 - **Quick:** No deployment necessary. Use it directly in your browser with no limitations.
-- **Free:** PicGo is powered by Vue.js and is entirely free of charge.
+- **Free:** PicHostify is powered by Vue.js and is entirely free of charge.
 - **Secure:** Sensitive data like API Keys are stored locally using IndexedDB.
 
 ## :book: How to use
 
-Start by creating a [GitHub Token](https://github.com/settings/tokens/new) and use it to configure your PicGo. It's that simple!
+Start by creating a [GitHub Token](https://github.com/settings/tokens/new) and use it to configure your PicHostify. It's that simple!
 
 ## :inbox_tray: Installation
 
-PicGo will soon be available in the Google Chrome App Store, but you can also build it from the source code:
+PicHostify will soon be available in the Google Chrome App Store, but you can also build it from the source code:
 
 1. Clone the repository or download the source code:
 
     ```
-    git clone https://github.com/jwjoel/picgo.git
+    git clone https://github.com/jwjoel/PicHostify.git
     ```
 
-2. Build PicGo with the commands `npm install` and `npm run build`
+2. Build PicHostify with the commands `npm install` and `npm run build`
 
 3. Open the Extensions page in your browser:
 
@@ -46,7 +46,7 @@ PicGo will soon be available in the Google Chrome App Store, but you can also bu
 
 5. Click "Load unpacked extension" (Chrome) or "Load Temporary Add-on" (Firefox) and select the `dist` directory within your project folder.
 
-6. PicGo extension should now be installed and ready to use in your browser's toolbar.
+6. PicHostify extension should now be installed and ready to use in your browser's toolbar.
 
 ## :sparkles: Features
 
@@ -68,16 +68,20 @@ We welcome contributions in many forms, including but not limited to, improving 
 This project is possible thanks to all of its contributors:
 
 <p align="center">
-  <a href="https://github.com/jwjoel/PicGo/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=jwjoel/PicGo" />
+  <a href="https://github.com/jwjoel/PicHostify/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=jwjoel/PicHostify" />
   </a>
 </p>
 
 ## :speech_balloon: Feedback
 
-Should you encounter any issues during use, please raise an [issue](https://github.com/jwjoel/picgo/issues) for the author to address.
+Should you encounter any issues during use, please raise an [issue](https://github.com/jwjoel/PicHostify/issues) for the author to address.
+
+## :heart: Acknowledgement
+
+We would like to express our deepest gratitude to the original project, [PicX](https://github.com/XPoet/picx), and its [author](https://github.com/XPoet). Their work has laid a solid foundation for PicHostify and inspired our efforts. If you're interested in a web version of PicHostify, we highly recommend visiting the original PicX project.
 
 ## :balance_scale: License
 
-This project is licensed under [AGPL-3.0](https://github.com/jwjoel/picgo/blob/master/LICENSE).
+This project is licensed under [AGPL-3.0](https://github.com/jwjoel/PicHostify/blob/master/LICENSE).
 

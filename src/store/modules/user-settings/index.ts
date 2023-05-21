@@ -69,7 +69,7 @@ const initSettings: UserSettingsModel = {
   starred: false,
   watermark: {
     enable: false,
-    text: 'PicGo',
+    text: 'PicHostify',
     fontSize: 50,
     position: WatermarkPositionEnum.rightBottom,
     textColor: '#FFFFFF',

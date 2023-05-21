@@ -1,6 +1,6 @@
-export const PICX_REPO_NAME = 'jwjoel/PicGo'
+export const PICX_REPO_NAME = 'jwjoel/PicHostify'
 export const INIT_REPO_NAME = 'images-hosting'
-export const INIT_REPO_DESC = 'PicGo image hosting repository'
+export const INIT_REPO_DESC = 'PicHostify image hosting repository'
 export const INIT_REPO_BARNCH = 'main'
 export const PICX_UPLOAD_IMG_DESC = 'Upload image'
 export const PICX_UPLOAD_IMGS_DESC = 'Upload images'

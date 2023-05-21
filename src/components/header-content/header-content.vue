@@ -3,9 +3,9 @@
     <div class="header-left">
       <div class="brand" @click="router.push('/')">
         <div class="logo">
-          <img src="../../assets/logo.png" alt="PicGo" />
+          <img src="../../assets/logo.png" alt="PicHostify" />
         </div>
-        <div class="title">PicGo</div>
+        <div class="title">PicHostify</div>
       </div>
       <div class="website-count">
         <site-count :isuv="false" />

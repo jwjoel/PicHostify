@@ -10,9 +10,9 @@ export default function configPWAPlugin() {
     registerType: 'autoUpdate',
     injectRegister: 'auto',
     manifest: {
-      name: 'PicGo',
-      short_name: 'PicGo',
-      description: 'PicGo is a GitHub API based image hosting platform',
+      name: 'PicHostify',
+      short_name: 'PicHostify',
+      description: 'PicHostify is a GitHub API based image hosting platform',
       icons: [
         {
           src: './logo.png',
