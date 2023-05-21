@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 align="center"> PicHostify Image Hosting </h1>
+<h1 align="center"> PicHostify </h1>
 
 <p align="center">
   <a href="https://github.com/jwjoel/PicHostify/releases"><img src="https://img.shields.io/github/release/jwjoel/PicHostify.svg" alt="Release"></a>
