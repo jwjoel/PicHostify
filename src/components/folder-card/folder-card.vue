@@ -1,6 +1,6 @@
 <template>
   <div class="folder-card" @dblclick="dblclickFolder">
-    <el-tooltip v-if="mode === 'dir'" content="Double click to next menu" placement="top">
+    <el-tooltip v-if="mode === 'dir'" content="Next (Double Click)" placement="top">
       <div class="icon">
         <svg
           t="1639999626518"
@@ -45,7 +45,7 @@
         ></path>
       </svg>
     </div>
-    <div class="text" v-if="mode === 'back'">Double click to previous menu</div>
+    <div class="text" v-if="mode === 'back'">Back (Double Click)</div>
   </div>
 </template>
 

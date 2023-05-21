@@ -7,10 +7,10 @@
   >
     <el-row>
       <el-col :span="24">
-        <el-form-item label="水印文字">
+        <el-form-item label="Watermark">
           <el-input
             v-model="watermark.text"
-            placeholder="请输入水印文字，限制 20 字"
+            placeholder="Less than 20 words"
             clearable
             maxlength="20"
             @input="changeWatermarkConfig"
@@ -19,7 +19,7 @@
       </el-col>
 
       <el-col :span="isTool ? 10 : 24">
-        <el-form-item label="字体大小">
+        <el-form-item label="Font Size">
           <el-input-number
             v-model="watermark.fontSize"
             :min="40"
@@ -31,13 +31,13 @@
       </el-col>
 
       <el-col :span="isTool ? 14 : 24">
-        <el-form-item label="水印颜色">
+        <el-form-item label="Color">
           <el-color-picker v-model="watermark.textColor" @change="changeWatermarkConfig" />
         </el-form-item>
       </el-col>
 
       <el-col :span="isTool ? 10 : 24">
-        <el-form-item label="水印透明度">
+        <el-form-item label="Transparency">
           <el-input-number
             v-model="watermark.opacity"
             :precision="1"
@@ -50,12 +50,12 @@
       </el-col>
 
       <el-col :span="isTool ? 14 : 24">
-        <el-form-item label="水印位置">
+        <el-form-item label="Position">
           <el-radio-group v-model="watermark.position" @change="changeWatermarkConfig">
-            <el-radio :label="WatermarkPositionEnum.leftTop">左上角</el-radio>
-            <el-radio :label="WatermarkPositionEnum.leftBottom">左下角</el-radio>
-            <el-radio :label="WatermarkPositionEnum.rightTop">右上角</el-radio>
-            <el-radio :label="WatermarkPositionEnum.rightBottom">右下角</el-radio>
+            <el-radio :label="WatermarkPositionEnum.leftTop">Top Left</el-radio>
+            <el-radio :label="WatermarkPositionEnum.leftBottom">Bottom Left</el-radio>
+            <el-radio :label="WatermarkPositionEnum.rightTop">Top Right</el-radio>
+            <el-radio :label="WatermarkPositionEnum.rightBottom">Bottom Right</el-radio>
           </el-radio-group>
         </el-form-item>
       </el-col>

@@ -41,16 +41,16 @@
         size="default"
       >
         <el-form-item
-          label="Image Link Type"
+          label="Link Type"
           prop="name"
-          :rules="[{ required: true, message: 'Image link type name cannot be empty' }]"
+          :rules="[{ required: true, message: 'Type cannot be empty' }]"
         >
           <el-input v-model="imageLinkRuleForm.name" type="text" />
         </el-form-item>
         <el-form-item
-          label="Image Link Rule"
+          label="Link Rule"
           prop="rule"
-          :rules="[{ required: true, message: 'Image link rule cannot be empty' }]"
+          :rules="[{ required: true, message: 'Rule cannot be empty' }]"
         >
           <el-input v-model="imageLinkRuleForm.rule" type="text" />
         </el-form-item>
@@ -60,7 +60,7 @@
             :disabled="!imageLinkRuleForm.name || !imageLinkRuleForm.rule"
             @click="addImageLinkRule(formRef)"
           >
-            Add Image Link Rule
+            Add Rule
           </el-button>
         </el-form-item>
       </el-form>

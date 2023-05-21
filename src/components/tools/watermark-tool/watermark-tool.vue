@@ -25,10 +25,10 @@
           type="success"
           @click="download"
         >
-          批量下载
+          Download All
         </el-button>
         <div>
-          <el-button v-if="imgList.length" plain type="warning" @click="reset"> 重置 </el-button>
+          <el-button v-if="imgList.length" plain type="warning" @click="reset"> Reset </el-button>
           <el-button
             v-if="imgList.length"
             :disabled="watermarking || isWatermarked || !watermarkConfig.text"
@@ -36,7 +36,7 @@
             type="primary"
             @click="addWatermark"
           >
-            添加水印
+            Add Watermark
           </el-button>
         </div>
       </div>

@@ -19,10 +19,10 @@
 
       <div class="user-operate" :class="{ compressed: isCompressed && imgList.length > 1 }">
         <el-button v-if="isCompressed && imgList.length > 1" plain type="success" @click="download">
-          批量下载
+          Download All
         </el-button>
         <div>
-          <el-button v-if="imgList.length" plain type="warning" @click="reset"> 重置 </el-button>
+          <el-button v-if="imgList.length" plain type="warning" @click="reset"> Reset </el-button>
           <el-button
             v-if="imgList.length"
             :disabled="compressing || isCompressed"
@@ -30,7 +30,7 @@
             type="primary"
             @click="compress"
           >
-            压缩
+            Compress
           </el-button>
         </div>
       </div>
