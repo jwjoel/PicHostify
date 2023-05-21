@@ -17,9 +17,33 @@
 - **Free** - PicGo is built with various open-source technologies and is completely free.
 - **Secure** - Sensitive data like tokens are stored locally on the user's device with no risk of leakage.
 
-## Instructions
+## Instruction
 
 Simply create a [GitHub Token](https://github.com/settings/tokens/new) and use it to configure your image hosting extension.
+
+## Installation
+
+Search for [PicGo]() in the Google Chrome App Store (Coming Soon!) or
+
+1. Clone the repository or download the source code:
+
+   ```
+   git clone https://github.com/jwjoel/picgo.git
+   ```
+
+2. Build the PicGo with `npm install` and `npm run build`
+
+3. In your browser, open the Extensions page:
+
+   - In Chrome, navigate to `chrome://extensions/`
+   - In Firefox, navigate to `about:addons`
+
+4. Enable developer mode (usually a toggle in the top-right corner of the Extensions page).
+
+5. Click "Load unpacked extension" (Chrome) or "Load Temporary Add-on" (Firefox) and select the `dist` directory that in your project dictionary.
+
+5. The PicGo extension should now be installed and visible in your browser's toolbar.
+
 
 ## Features
 
